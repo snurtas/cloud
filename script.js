@@ -69,6 +69,9 @@ document.getElementById('invoiceForm').addEventListener('submit', function (e) {
         totalPrice += price;
     }
 
+    doc.setFontSize(16);
+    doc.text(`Toplam: ${totalPrice.toFixed(2)} ${currencySymbol}`, 10, yOffset + 10);
+
     
 
      // PDF Önizleme
