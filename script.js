@@ -52,7 +52,7 @@ document.getElementById('invoiceForm').addEventListener('submit', function (e) {
 
     let yOffset = 75; // Y eksenindeki başlangıç pozisyonu
     let totalPrice = 0;
-    
+    const currencySymbol = currency === 'USD' ? '$' : (currency === 'EUR' ? '€' : 'TL');
 
     for (let i = 0; i < items.length; i++) {
         const description = items[i].querySelector('input[type="text"]').value;
@@ -71,6 +71,10 @@ document.getElementById('invoiceForm').addEventListener('submit', function (e) {
 
     
 
+     // PDF Önizleme
+     const pdfPreview = doc.output('datauristring');
+     document.getElementById('pdfPreview').src = pdfPreview;
+ 
    
     // PDF'i indir
     doc.save('fatura.pdf');
