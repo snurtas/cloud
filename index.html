@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatura Oluşturucu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Fatura Oluşturucu</h1>
+        <form id="invoiceForm">
+            <div>
+                <label for="companyName">Şirket Adı:</label>
+                <input type="text" id="companyName" required>
+            </div>
+            <div>
+                <label for="clientName">Müşteri Adı:</label>
+                <input type="text" id="clientName" required>
+            </div>
+            <div>
+                <label for="invoiceDate">Fatura Tarihi:</label>
+                <input type="date" id="invoiceDate" required>
+            </div>
+            
+            <div id="items">
+                <h2>Ürün/Hizmetler</h2>
+                <div class="item">
+                    <label for="itemDescription1">Açıklama:</label>
+                    <input type="text" id="itemDescription1" required>
+                    <label for="itemPrice1">Fiyat:</label>
+                    <input type="number" id="itemPrice1" required>
+                </div>
+            </div>
+            <button type="button" id="addItem">Ürün Ekle</button>
+            <button type="submit">Fatura Oluştur ve İndir</button>
+        </form>
+        <div id="invoiceOutput"></div>
+        <iframe id="pdfPreview" style="width:100%; height:500px; margin-top:20px;"></iframe>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
