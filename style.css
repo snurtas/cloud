@@ -40,7 +40,7 @@ input[type="text"], input[type="date"], input[type="number"], select {
     padding: 8px;
     margin: 5px 0 10px 0;
     border-radius: 5px;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--main-bg-color);
 }
 
 button {
@@ -53,7 +53,9 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-
+.container h1{
+    color: var(--text-color);
+}
 button:hover {
     background-color: var(--text-color);
     transform: scale(1.05);
@@ -70,5 +72,5 @@ button:hover {
 #invoiceForm label,
     #invoiceForm input,
     #invoiceForm h2{
-        color: var(--text-color);
+        color: var(--main-bg-color);
     }
